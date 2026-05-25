@@ -19,11 +19,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Decode debug keystore
+        run: base64 -d debug.keystore.base64 > debug.keystore
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build Debug APK
-        run: gradle assembleDebug
+        run: gradle assembleDebug --no-daemon
+        env:
+          JAVA_TOOL_OPTIONS: "-Djava.awt.headless=true"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
