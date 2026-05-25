@@ -1,0 +1,6 @@
+{
+  "name": "Wellplate",
+  "description": "A personal nutrition assistant that helps users scan food, track meals, and reach their daily calorie and macro goals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
